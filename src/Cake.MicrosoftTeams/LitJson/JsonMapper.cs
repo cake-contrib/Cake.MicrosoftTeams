@@ -843,6 +843,8 @@ namespace Cake.MicrosoftTeams
                     writer.WriteObjectStart();
                     foreach (DictionaryEntry entry in (IDictionary) obj)
                     {
+                        if (entry.Value == null) continue;
+
                         writer.WritePropertyName((string) entry.Key);
                         WriteValue(entry.Value, writer, writer_is_private,
                             depth + 1);
@@ -895,11 +897,12 @@ namespace Cake.MicrosoftTeams
                 writer.WriteObjectStart();
                 foreach (PropertyMetadata p_data in props)
                 {
+                    string propertyName = null;
+                    object propertyValue = null;
                     if (p_data.IsField)
                     {
-                        writer.WritePropertyName(p_data.Info.Name);
-                        WriteValue(((FieldInfo) p_data.Info).GetValue(obj),
-                            writer, writer_is_private, depth + 1);
+                        propertyName = p_data.Info.Name;
+                        propertyValue = ((FieldInfo) p_data.Info).GetValue(obj);
                     }
                     else
                     {
@@ -907,11 +910,16 @@ namespace Cake.MicrosoftTeams
 
                         if (p_info.CanRead)
                         {
-                            writer.WritePropertyName(p_data.Info.Name);
-                            WriteValue(p_info.GetValue(obj, null),
-                                writer, writer_is_private, depth + 1);
+                            propertyName = p_data.Info.Name;
+                            propertyValue = p_info.GetValue(obj, null);
                         }
                     }
+
+                    if (propertyName == null || propertyValue == null) continue;
+
+                    writer.WritePropertyName(propertyName);
+                    WriteValue(propertyValue,
+                        writer, writer_is_private, depth + 1);
                 }
                 writer.WriteObjectEnd();
             }
