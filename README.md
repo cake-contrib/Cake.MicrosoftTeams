@@ -5,7 +5,7 @@ Cake addin that provides Microsoft Teams aliases
 ## Usage
 
 ```cake
-#addin nuget:?package=Cake.MicrosoftTeams&version=0.1.1-Alpha
+#addin nuget:?package=Cake.MicrosoftTeams&version=0.1.2-Alpha
 
 MicrosoftTeamsPostMessage("Hello from Cake!",
     new MicrosoftTeamsSettings {
