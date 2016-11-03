@@ -29,10 +29,12 @@ var messageCard = new MicrosoftTeamsMessageCard {
 
 Information("[{1:yyyy-MM-dd HH:mm:ss}] Posting message to Microsoft Teams:\r\n{0}", messageCard, DateTime.Now);
 
-Information("[{1:yyyy-MM-dd HH:mm:ss}] {0}",
-        MicrosoftTeamsPostMessage(messageCard,
+System.Net.HttpStatusCode result = MicrosoftTeamsPostMessage(messageCard,
         new MicrosoftTeamsSettings {
             IncomingWebhookUrl = EnvironmentVariable("MicrosoftTeamsWebHook")
-        }),
+        });
+
+Information("[{1:yyyy-MM-dd HH:mm:ss}] {0}",
+        result,
         DateTime.Now
     );

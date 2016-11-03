@@ -7,9 +7,9 @@ Cake addin that provides Microsoft Teams aliases
 ### Simple message
 
 ```cake
-#addin nuget:?package=Cake.MicrosoftTeams&version=0.2.0-Alpha
+#addin nuget:?package=Cake.MicrosoftTeams&version=0.2.0-alpha
 
-MicrosoftTeamsPostMessage("Hello from Cake!",
+System.Net.HttpStatusCode result = MicrosoftTeamsPostMessage("Hello from Cake!",
     new MicrosoftTeamsSettings {
         IncomingWebhookUrl = EnvironmentVariable("MicrosoftTeamsWebHook")
     });
@@ -19,7 +19,7 @@ MicrosoftTeamsPostMessage("Hello from Cake!",
 ### Advanced message
 
 ```cake
-#addin nuget:?package=Cake.MicrosoftTeams&version=0.2.0-Alpha
+#addin nuget:?package=Cake.MicrosoftTeams&version=0.2.0-alpha
 
 var messageCard = new MicrosoftTeamsMessageCard {
   summary = "Cake posted message using Cake.MicrosoftTeams",
@@ -39,13 +39,23 @@ var messageCard = new MicrosoftTeamsMessageCard {
   }
 };
 
-MicrosoftTeamsPostMessage(messageCard,
+System.Net.HttpStatusCode result = MicrosoftTeamsPostMessage(messageCard,
   new MicrosoftTeamsSettings {
       IncomingWebhookUrl = EnvironmentVariable("MicrosoftTeamsWebHook")
   });
-```
 
+```
 ![image](https://cloud.githubusercontent.com/assets/1647294/19965144/e402e034-a1c5-11e6-8b3c-70b2dfdda427.png)
+
+### Return values
+
+|Response Code                | Details    |
+|-----------------------------|------------|
+|OK (200)                     | A well-formed request is sent to an existing webhook. The request contains a valid payload, and has a valid corresponding webhook configuration.|
+|BadRequest (400)             | An incorrectly-formed request is sent to a webhook that exists. The payload could contain non-parseable JSON, incorrect JSON values (e.g. expected a String, got an array), incorrect content-type, etc..|
+|NotFound (404)               | A request is sent to a webhook that does not exist.|
+|RequestEntityTooLarge (413)  | A request is sent to a webhook that is too large in size for processing.|
+|429 (429)                    |Client is sending too many requests and Office 365 is throttling the requests to a webhook.|
 
 ## Disclaimer
 
