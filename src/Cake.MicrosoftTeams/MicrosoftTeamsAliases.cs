@@ -6,13 +6,12 @@ using System.Text;
 using Cake.Core;
 using Cake.Core.Annotations;
 
-
 namespace Cake.MicrosoftTeams
 {
     /// <summary>
     /// Contains functionality related to Microsoft Teams.
     /// </summary>
-    [CakeAliasCategory("Micrsoft Teams")]
+    [CakeAliasCategory("Microsoft Teams")]
     public static class MicrosoftTeamsAliases
     {
         /// <summary>
