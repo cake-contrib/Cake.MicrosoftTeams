@@ -114,6 +114,12 @@ namespace Cake.MicrosoftTeams
         ///                new MicrosoftTeamsMessageFacts { name ="IsCoreClr", value = Context.Environment.Runtime.IsCoreClr.ToString() }
         ///            },
         ///        }
+        ///    },
+        ///    potentialAction = new [] { 
+        ///        new MicrosoftTeamsMessagePotentialAction {
+        ///            name = "View in Trello",
+        ///            target = new []{"https://trello.com/c/1101/"}
+        ///        }
         ///    }
         /// };
         ///
