@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0-*",
+  "version": "0.3.0-*",
   "description": "Provides Microsoft Teams aliases (extension methods on Cake context) for Cake.",
   "copyright": "Copyright (c) WCOM AB",
   "authors": [
@@ -10,7 +10,7 @@
     "projectUrl": "https://github.com/cake-contrib/Cake.MicrosoftTeams",
     "licenseUrl": "https://github.com/cake-contrib/Cake.MicrosoftTeams/blob/master/LICENSE",
     "iconUrl": "http://cdn.rawgit.com/WCOMAB/nugetpackages/master/Chocolatey/icons/wcom.png",
-    "releaseNotes": "Fixed repo url",
+    "releaseNotes": "Added view action",
     "requireLicenseAcceptance": false,
     "tags": [
       "Cake",
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "Cake.Core": {
-      "version": "0.16.2",
+      "version": "0.17.0",
       "type": "build"
     }
   },

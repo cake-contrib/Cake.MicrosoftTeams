@@ -22,7 +22,7 @@ namespace Cake.MicrosoftTeams
 
     namespace LitJson
     {
-        public class JsonName : Attribute
+        internal class JsonName : Attribute
         {
             public string Name { get; protected set; }
 
