@@ -35,6 +35,11 @@ namespace Cake.MicrosoftTeams
         public ICollection<MicrosoftTeamsMessageSection> sections { get; set; }
 
         /// <summary>
+        /// Contains a list of actions to display in the card.
+        /// </summary>
+        public ICollection<MicrosoftTeamsMessagePotentialAction> potentialAction { get; set; }
+
+        /// <summary>
         /// Converts <see cref="MicrosoftTeamsMessageCard"/> to an string representation.
         /// </summary>
         /// <returns>Returns string representation of current <see cref="MicrosoftTeamsMessageCard"/>.</returns>
