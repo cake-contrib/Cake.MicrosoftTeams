@@ -7,7 +7,7 @@ Cake addin that provides Microsoft Teams aliases
 ### Simple message
 
 ```cake
-#addin nuget:?package=Cake.MicrosoftTeams&version=0.2.0-alpha
+#addin nuget:?package=Cake.MicrosoftTeams
 
 System.Net.HttpStatusCode result = MicrosoftTeamsPostMessage("Hello from Cake!",
     new MicrosoftTeamsSettings {
@@ -19,7 +19,7 @@ System.Net.HttpStatusCode result = MicrosoftTeamsPostMessage("Hello from Cake!",
 ### Advanced message
 
 ```cake
-#addin nuget:?package=Cake.MicrosoftTeams&version=0.2.0-alpha
+#addin nuget:?package=Cake.MicrosoftTeams
 
 var messageCard = new MicrosoftTeamsMessageCard {
   summary = "Cake posted message using Cake.MicrosoftTeams",
@@ -37,7 +37,7 @@ var messageCard = new MicrosoftTeamsMessageCard {
           },
       }
   },
-  potentialAction = new [] { 
+  potentialAction = new [] {
         new MicrosoftTeamsMessagePotentialAction {
             name = "View in Trello",
             target = new []{"https://trello.com/c/1101/"}
