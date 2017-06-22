@@ -18,6 +18,11 @@ namespace Cake.MicrosoftTeams
         public string summary { get; set; }
 
         /// <summary>
+        /// Specifies a custom brand color for the card. The color will be displayed in a non-obtrusive manner.
+        /// </summary>
+        public string themeColor { get; set; }
+
+        /// <summary>
         /// The main text of the card. This will be rendered below the sender information and optional title, and above any sections or actions present.
         /// </summary>
         /// <remarks>Content can be formatted using basic Markdown markup (headings, bold, italic, links, etc.).</remarks>
