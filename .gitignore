@@ -253,3 +253,5 @@ paket-files/
 
 #Cake (generated)
 [Tt]ools/
+BuildArtifacts/
+![Tt]ools/packages.config
