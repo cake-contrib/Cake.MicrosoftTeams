@@ -3,7 +3,6 @@ init:
   - git config --global core.autocrlf true
 build_script:
 - ps: >-
-    Set-Location .\tests\integration;
     .\build.ps1 --target=AppVeyor
 
 test: off
