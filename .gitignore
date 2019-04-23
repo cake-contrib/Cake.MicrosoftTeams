@@ -255,3 +255,4 @@ paket-files/
 [Tt]ools/
 BuildArtifacts/
 ![Tt]ools/packages.config
+.dotnet/

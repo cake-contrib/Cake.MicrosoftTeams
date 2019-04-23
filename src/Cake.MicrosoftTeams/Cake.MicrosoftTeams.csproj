@@ -13,7 +13,7 @@
     <PackageId>Cake.MicrosoftTeams</PackageId>
     <PackageTags>Cake;Script;Build;Microsoft;Teams</PackageTags>
     <PackageReleaseNotes>Added view action</PackageReleaseNotes>
-    <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
+    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.MicrosoftTeams</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/cake-contrib/Cake.MicrosoftTeams/blob/master/LICENSE</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.28.0">
+    <PackageReference Include="Cake.Core" Version="0.33.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
