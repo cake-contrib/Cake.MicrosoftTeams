@@ -1,4 +1,5 @@
-#r "./bin/Debug/net45/Cake.MicrosoftTeams.dll"
+#r "./bin/Debug/net6.0/Cake.MicrosoftTeams.dll
+
 string message = "Hello from Cake!";
 Information("[{1:yyyy-MM-dd HH:mm:ss}] Posting message to Microsoft Teams: {0}", message, DateTime.Now);
 
