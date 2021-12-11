@@ -5,7 +5,7 @@
     <Copyright>Copyright (c) WCOM AB</Copyright>
     <VersionPrefix>0.4.0</VersionPrefix>
     <Authors>WCOM AB</Authors>
-    <TargetFrameworks>netstandard2.0;net46;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
     <PlatformTarget>anycpu</PlatformTarget>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

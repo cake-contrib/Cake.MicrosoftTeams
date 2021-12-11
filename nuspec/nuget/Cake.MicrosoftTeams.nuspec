@@ -16,11 +16,6 @@
     <tags>Cake, Script, Build, Microsoft Teams, cake-addin</tags>
   </metadata>
   <files>
-    <file src="net46\Cake.MicrosoftTeams.dll" target="lib/net46" />
-    <file src="net46\Cake.MicrosoftTeams.pdb" target="lib/net46" />
-    <file src="net46\Cake.MicrosoftTeams.xml" target="lib/net46" />
-    <file src="netstandard2.0\Cake.MicrosoftTeams.dll" target="lib/netstandard2.0" />
-    <file src="netstandard2.0\Cake.MicrosoftTeams.pdb" target="lib/netstandard2.0" />
     <file src="netcoreapp3.1\Cake.MicrosoftTeams.dll" target="lib/netcoreapp3.1" />
     <file src="netcoreapp3.1\Cake.MicrosoftTeams.pdb" target="lib/netcoreapp3.1" />
     <file src="netcoreapp3.1\Cake.MicrosoftTeams.xml" target="lib/netcoreapp3.1" />
