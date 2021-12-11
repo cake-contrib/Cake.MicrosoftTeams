@@ -3,7 +3,7 @@ init:
   - git config --global core.autocrlf true
 build_script:
 - ps: >-
-    .\build.ps1 --target=AppVeyor
+    .\build.ps1 --target=CI
 
 test: off
 deploy: off
