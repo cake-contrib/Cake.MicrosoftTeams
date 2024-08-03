@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=2.2.1
+#load nuget:https://pkgs.dev.azure.com/cake-contrib/Home/_packaging/addins/nuget/v3/index.json?package=Cake.Recipe&version=4.0.0-alpha0122
 
 Environment.SetVariableNames();
 
@@ -9,14 +9,13 @@ BuildParameters.SetParameters(context: Context,
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.MicrosoftTeams",
                             appVeyorAccountName: "cakecontrib",
-                            shouldRunDupFinder: false,
                             shouldRunInspectCode: false);
 
 BuildParameters.PrintParameters(Context);
 
-ToolSettings.SetToolSettings(context: Context,
-                            dupFinderExcludePattern: new string[] {
-                                BuildParameters.RootDirectoryPath + "/src/Cake.MicrosoftTeams/**/*.AssemblyInfo.cs",
-                                BuildParameters.RootDirectoryPath + "/src/Cake.MicrosoftTeams/LitJson/**/*.cs" });
+ToolSettings.SetToolPreprocessorDirectives(
+                            gitReleaseManagerGlobalTool: "#tool dotnet:?package=GitReleaseManager.Tool&version=0.18.0");
+
+ToolSettings.SetToolSettings(context: Context);
 
 Build.RunDotNetCore();
