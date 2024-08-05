@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <Compile Include="..\SolutionInfo.cs" />
+    <None Include="$(ProjectDir)../.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>
