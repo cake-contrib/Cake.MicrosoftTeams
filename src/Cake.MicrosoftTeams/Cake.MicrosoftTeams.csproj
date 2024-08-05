@@ -11,13 +11,13 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Cake.MicrosoftTeams</AssemblyName>
     <PackageId>Cake.MicrosoftTeams</PackageId>
-    <PackageTags>Cake;Script;Build;Microsoft;Teams</PackageTags>
-    <PackageReleaseNotes>Added view action</PackageReleaseNotes>
-    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
+    <PackageTags>Cake;Script;Build;Microsoft Teams;cake-addin</PackageTags>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.MicrosoftTeams</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/cake-contrib/Cake.MicrosoftTeams/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageReleaseNotes>$(PackageProjectUrl)/releases</PackageReleaseNotes>
+    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/addin/cake-contrib-addin-medium.png</PackageIconUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/cake-contrib/Cake.MicrosoftTeams</RepositoryUrl>
+    <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
@@ -28,6 +28,7 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <ContinuousIntegrationBuild Condition="'$(APPVEYOR)'!=''">true</ContinuousIntegrationBuild>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
   <ItemGroup>
