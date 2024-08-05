@@ -47,6 +47,12 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- using LitJson in a project, throws off StyleCop, big time! -->
+    <CakeContribGuidelinesOmitRecommendedReference Include="StyleCop.Analyzers" Visible="false" />
+    <CakeContribGuidelinesOmitRecommendedConfigFile Include="stylecop.json" Visible="false" />
+  </ItemGroup>
+
   <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
     <Reference Include="System.Xml" />
     <Reference Include="System.Net.Http" />
