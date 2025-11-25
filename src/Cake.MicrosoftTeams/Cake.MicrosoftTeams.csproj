@@ -5,7 +5,7 @@
     <Copyright>Copyright (c) WCOM AB</Copyright>
     <VersionPrefix>0.4.0</VersionPrefix>
     <Authors>WCOM AB</Authors>
-    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <PlatformTarget>anycpu</PlatformTarget>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -46,7 +46,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Cake.Core" Version="4.0.0">
+    <PackageReference Include="Cake.Core" Version="5.0.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
