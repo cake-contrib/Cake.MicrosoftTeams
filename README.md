@@ -32,7 +32,7 @@ var messageCard = new MicrosoftTeamsMessageCard {
           activityImage = "https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-small.png",
           facts = new [] {
               new MicrosoftTeamsMessageFacts { name ="CakeVersion", value = Context.Environment.Runtime.CakeVersion.ToString() },
-              new MicrosoftTeamsMessageFacts { name ="TargetFramework", value = Context.Environment.Runtime.TargetFramework.ToString() },
+              new MicrosoftTeamsMessageFacts { name ="TargetFramework", value = Context.Environment.Runtime.BuiltFramework.ToString() },
               new MicrosoftTeamsMessageFacts { name ="IsCoreClr", value = Context.Environment.Runtime.IsCoreClr.ToString() }
           },
       }
@@ -63,6 +63,8 @@ System.Net.HttpStatusCode result = MicrosoftTeamsPostMessage(messageCard,
 |RequestEntityTooLarge (413)  | A request is sent to a webhook that is too large in size for processing.|
 |429 (429)                    |Client is sending too many requests and Office 365 is throttling the requests to a webhook.|
 
-## Disclaimer
+## Discussion
 
-This is an early pre-release
+For questions and to discuss ideas & feature requests, use the [GitHub discussions on the Cake GitHub repository](https://github.com/cake-build/cake/discussions), under the [Extension Q&A](https://github.com/cake-build/cake/discussions/categories/extension-q-a) category.
+
+[![Join in the discussion on the Cake repository](https://img.shields.io/badge/GitHub-Discussions-green?logo=github)](https://github.com/cake-build/cake/discussions)
