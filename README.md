@@ -32,7 +32,7 @@ var messageCard = new MicrosoftTeamsMessageCard {
           activityImage = "https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-small.png",
           facts = new [] {
               new MicrosoftTeamsMessageFacts { name ="CakeVersion", value = Context.Environment.Runtime.CakeVersion.ToString() },
-              new MicrosoftTeamsMessageFacts { name ="TargetFramework", value = Context.Environment.Runtime.TargetFramework.ToString() },
+              new MicrosoftTeamsMessageFacts { name ="TargetFramework", value = Context.Environment.Runtime.BuiltFramework.ToString() },
               new MicrosoftTeamsMessageFacts { name ="IsCoreClr", value = Context.Environment.Runtime.IsCoreClr.ToString() }
           },
       }
