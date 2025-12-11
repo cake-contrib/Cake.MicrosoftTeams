@@ -9,7 +9,8 @@ BuildParameters.SetParameters(context: Context,
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.MicrosoftTeams",
                             appVeyorAccountName: "cakecontrib",
-                            shouldRunInspectCode: false);
+                            shouldRunInspectCode: false,
+                            shouldRunDotNetCorePack: true);
 
 BuildParameters.PrintParameters(Context);
 

@@ -11,13 +11,12 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Cake.MicrosoftTeams</AssemblyName>
     <PackageId>Cake.MicrosoftTeams</PackageId>
-    <PackageTags>Cake;Script;Build;Microsoft;Teams</PackageTags>
-    <PackageReleaseNotes>Added view action</PackageReleaseNotes>
-    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
+    <PackageTags>Cake;Script;Build;Microsoft Teams;cake-addin;cake-build;addin</PackageTags>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.MicrosoftTeams</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/cake-contrib/Cake.MicrosoftTeams/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageReleaseNotes>$(PackageProjectUrl)/releases</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/cake-contrib/Cake.MicrosoftTeams</RepositoryUrl>
+    <RepositoryUrl>$(PackageProjectUrl).git</RepositoryUrl>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
@@ -28,24 +27,33 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <ContinuousIntegrationBuild Condition="'$(APPVEYOR)'!=''">true</ContinuousIntegrationBuild>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="..\SolutionInfo.cs" />
+    <None Include="$(ProjectDir)../.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Cake.Core" Version="2.0.0">
       <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="CakeContrib.Guidelines" Version="1.5.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
+  <ItemGroup>
+    <!-- using LitJson in a project, throws off StyleCop, big time! -->
+    <CakeContribGuidelinesOmitRecommendedReference Include="StyleCop.Analyzers" Visible="false" />
+    <CakeContribGuidelinesOmitRecommendedConfigFile Include="stylecop.json" Visible="false" />
   </ItemGroup>
 
 </Project>
