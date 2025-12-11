@@ -28,11 +28,13 @@
     <ContinuousIntegrationBuild Condition="'$(APPVEYOR)'!=''">true</ContinuousIntegrationBuild>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="..\SolutionInfo.cs" />
     <None Include="$(ProjectDir)../.editorconfig" Link=".editorconfig" />
+    <None Include="$(ProjectDir)../../README.md" Link="README.md" PackagePath="" Pack="true" />
   </ItemGroup>
 
   <ItemGroup>
