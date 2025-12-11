@@ -5,6 +5,10 @@ build_script:
 - ps: >-
     .\build.ps1 --target=CI
 
+install:
+  - choco install dotnet-10.0-sdk -y
+  - choco install dotnet-10.0-runtime -y
+
 test: off
 deploy: off
 
